@@ -10,10 +10,10 @@ import {
 
 import { FaYoutube } from "react-icons/fa";
 
-const FooterSection = ({ title, links }) => (
+const FooterSection = ({ title, links }: any) => (
   <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
     <div className="font-bold text-[16px]">{title}</div>
-    {links.map(({ icon: Icon, text, url }, index) => (
+    {links.map(({ icon: Icon, text, url }: any, index: any) => (
       <a
         key={index}
         href={url}
