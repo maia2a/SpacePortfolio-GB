@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   RxDiscordLogo,
@@ -9,57 +10,88 @@ import {
 
 import { FaYoutube } from "react-icons/fa";
 
-const Footer = () => {
-  return (
-    <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px]">
-      <div className="w-full flex flex-col items-center justify-center m-auto">
-        <div className="w-full h-full flex flex-row items-center justify-around flex-wrap">
-          <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-            <div className="font-bold text-[16px]">Community</div>
-            <p className="flex flex-row items-center my-[15px] cursor-pointer">
-              <FaYoutube />
-              <span className="text-[15px] ml-[6px]">@GabriellDev</span>
-            </p>
-            <p className="flex flex-row items-center my-[15px] cursor-pointer">
-              <RxGithubLogo />
-              <span className="text-[15px] ml-[6px]">MA1A01</span>
-            </p>
-            <p className="flex flex-row items-center my-[15px] cursor-pointer">
-              <RxDiscordLogo />
-              <span className="text-[15px] ml-[6px]">biellmaaia</span>
-            </p>
-          </div>
-          <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-            <div className="font-bold text-[16px]">Social Media</div>
-            <p className="flex flex-row items-center my-[15px] cursor-pointer">
-              <RxInstagramLogo />
-              <span className="text-[15px] ml-[6px]">@gb.maia</span>
-            </p>
-            <p className="flex flex-row items-center my-[15px] cursor-pointer">
-              <RxTwitterLogo />
-              <span className="text-[15px] ml-[6px]">@biellmaaia</span>
-            </p>
-            <p className="flex flex-row items-center my-[15px] cursor-pointer">
-              <RxLinkedinLogo />
-              <span className="text-[15px] ml-[6px]">@biellmaaia</span>
-            </p>
-          </div>
-          <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-            <div className="font-bold text-[16px]">About</div>
-            <p className="flex flex-row items-center my-[15px] cursor-pointer">
-              <span className="text-[15px] ml-[6px]">Become a sponsor</span>
-            </p>
-            <p className="flex flex-row items-center my-[15px] cursor-pointer">
-              <span className="text-[15px] ml-[6px]">Learning about me</span>
-            </p>
-            <p className="flex flex-row items-center my-[15px] cursor-pointer">
-              <span className="text-[15px] ml-[6px]">
-                gabrielldeveloper@gmail.com
-              </span>
-            </p>
-          </div>
-        </div>
+const FooterSection = ({ title, links }) => (
+  <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
+    <div className="font-bold text-[16px]">{title}</div>
+    {links.map(({ icon: Icon, text, url }, index) => (
+      <a
+        key={index}
+        href={url}
+        target="_blank"
+        className="flex flex-row items-center my-[15px] cursor-pointer"
+        rel="noopener noreferrer"
+        style={{
+          textDecoration: "none",
+          color: "inherit",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        {Icon && <Icon />}
+        <span className="text-[15px] ml-[6px]">{text}</span>
+      </a>
+    ))}
+  </div>
+);
 
+const Footer = () => {
+  const communityLinks = [
+    {
+      icon: FaYoutube,
+      text: "@GabriellDev",
+      url: "https://www.youtube.com/@GabriellDeveloper",
+    },
+    {
+      icon: RxGithubLogo,
+      text: "MA1A01",
+      url: "https://github.com/MA1A01",
+    },
+    {
+      icon: RxDiscordLogo,
+      text: "biellmaaia",
+      url: "https://discord.com/users/biellmaaia",
+    },
+  ];
+  const aboutLinks = [
+    {
+      text: "Become a sponsor",
+      url: "#",
+    },
+    {
+      text: "Learning about me",
+      url: "#",
+    },
+    {
+      text: "Send me a email: gabrielldeveloper@gmail.com",
+      url: "mailto:gabrielldeveloper@gmail.com",
+    },
+  ];
+  const socialMediaLinks = [
+    {
+      icon: RxInstagramLogo,
+      text: "@gb.maia",
+      url: "https://instagram.com/gb.maia",
+    },
+    {
+      icon: RxTwitterLogo,
+      text: "@biellmaaia",
+      url: "https://twitter.com/biellmaaia",
+    },
+    {
+      icon: RxLinkedinLogo,
+      text: "@biellmaaia",
+      url: "https://linkedin.com/in/biellmaaia",
+    },
+  ];
+
+  return (
+    <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px]  z-30 relative">
+      <div className="w-full flex flex-col items-center justify-center m-auto ">
+        <div className="w-full h-full flex flex-row items-center justify-around flex-wrap">
+          <FooterSection title="Community" links={communityLinks} />
+          <FooterSection title="Social Media" links={socialMediaLinks} />
+          <FooterSection title="About" links={aboutLinks} />
+        </div>
         <div className="mb-[20px] text-[15px] text-center">
           &copy; Gabriell Maia Dev 2024. All rights reserved.
         </div>
