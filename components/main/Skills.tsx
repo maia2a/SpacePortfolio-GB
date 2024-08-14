@@ -9,8 +9,15 @@ import React from "react";
 import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
 
+//Interface for creating and updating a Skill
+interface SkillItem {
+  Image: string;
+  width: number;
+  height: number;
+}
+
 //Function criada para reduzir a duplicacao do codigo
-const renderSkillSection = (skillArray) => {
+const renderSkillSection = (skillArray: SkillItem[]) => {
   return (
     <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
       {skillArray.map((image, index) => (
