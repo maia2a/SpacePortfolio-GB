@@ -53,10 +53,12 @@ const HeroContent = () => {
           applications.
         </motion.p>
         <motion.a
+          href="/Gabriell Maia Curriculo.pdf"
+          download="Gabriell Maia Curriculo.pdf"
           variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >
-          Learn More!
+          Download My Resume
         </motion.a>
       </div>
 
