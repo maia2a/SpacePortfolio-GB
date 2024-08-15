@@ -7,24 +7,24 @@ const Projects = () => {
       id="projects"
       className="flex flex-col items-center justify-center py-20"
     >
-      <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
-        My projects
+      <h1 className="text-4xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-10">
+        My Projects
       </h1>
-      <div className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
+      <div className="w-full flex flex-wrap justify-center gap-10 px-5">
         <ProjectCard
           src="/SpaceWebsite.png"
           title="Space Themed Portfolio"
-          description="My space portfolio made with Next.js and Tailwind.css"
+          description="A space-themed portfolio built with Next.js and Tailwind CSS."
         />
         <ProjectCard
           src="/findparty.png"
           title="FindParty App"
-          description="An app that connects people to the party"
+          description="An app that connects people to parties."
         />
         <ProjectCard
           src="/newhorizon.png"
           title="NewHorizon App"
-          description="An app that find races to the company, making easier to find the driver of the company"
+          description="An app that helps companies find drivers more easily."
         />
       </div>
     </section>

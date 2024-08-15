@@ -7,28 +7,25 @@ import Image from "next/image";
 
 const Encryption = () => {
   return (
-    <div className="flex flex-row relative items-center justify-center min-h-screen w-full h-full">
-      <div className="absolute w-auto h-auto top-0 z-[5]">
-        <motion.div
-          variants={slideInFromTop}
-          className="text-[40px] font-medium text-center text-gray-200"
-        >
-          Performance{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-            {" "}
-            &{" "}
-          </span>
-          Security
-        </motion.div>
-      </div>
-      <div className="flex flex-col items-center justify-center translate-y-[-50px] absolute z-[20] w-auto h-auto ">
-        <div className="flex flex-col items-center group cursor-pointer w-auto h-auto ">
+    <div className="relative flex flex-col items-center justify-center min-h-screen w-full h-full overflow-hidden">
+      <motion.div
+        variants={slideInFromTop}
+        className="absolute top-0 z-[5] text-4xl font-medium text-center text-gray-200"
+      >
+        Performance{" "}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
+          & Security
+        </span>
+      </motion.div>
+
+      <div className="relative z-[20] flex flex-col items-center justify-center -translate-y-12">
+        <div className="flex flex-col items-center group cursor-pointer">
           <Image
             src="/LockTop.png"
             alt="Lock Top"
             width={50}
             height={50}
-            className="translate-y-5 transition-all duration-200 group-hover:translate-y-11"
+            className="transform transition-transform duration-200 group-hover:translate-y-6"
           />
           <Image
             src="/LockMain.png"
@@ -38,23 +35,23 @@ const Encryption = () => {
             className="z-10"
           />
         </div>
-        <div className="Welcome-box px-[15px] oy-[4px] z-[20px] border my-[20px] border-[#7042f88b] opacity-[0.9]">
-          <h1 className="Welcome-text text-[12px]">Encryption</h1>
+        <div className="Welcome-box px-4 py-1 mt-5 z-[20] border border-[#7042f88b] opacity-90">
+          <h1 className="Welcome-text text-xs">Encryption</h1>
         </div>
       </div>
-      <div className="absolute z-[20] bottom-[10px] px-[5px]">
-        <div className="cursive text-[20px] font-medium text-center text-gray-300">
+
+      <div className="absolute bottom-5 z-[20] px-2">
+        <div className="cursive text-lg font-medium text-center text-gray-300">
           Secure your data with our advanced encryption technology.
         </div>
       </div>
 
-      <div className="w-full flex items-start justify-center absolute">
+      <div className="absolute inset-0 z-[1] flex items-center justify-center">
         <video
           loop
           muted
           autoPlay
           playsInline
-          preload="false"
           className="w-full h-auto"
           src="/encryption.webm"
         />
